@@ -6,7 +6,7 @@
 
 ### `Deploy`
 
-
+https://e-commerce-js-project.netlify.app/
 
 ### `Screen`
 
