@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'poppins';
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    /* grabient.com */    
+    background-image: linear-gradient(45deg, #FFDEE9 0%, #B5FFFC 100%);   
+}
+
+header h1{
+    text-shadow: 0 0 30px #B5FFFC;
+}
+
+header input{
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+header div{
+    display: flex;
+    gap: 20px;
+}
+
+header div button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+}
+
+header div button:nth-child(1){
+    background: black;
+}
+
+header div button:nth-child(2){
+    background: blue;
+}
+
+header div button:nth-child(3){
+    background: red;
+}
+
+/* Kategoriler */
+
+section{
+    padding: 20px;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Otomatik sütunlar */
+    gap: 20px; 
+    padding: 25px;
+    justify-content: center;
+}
+
+.category-card {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 0 30px rgba(20, 20, 20, 0.231);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;  
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.category-card img {
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 20%; 
+    margin-bottom: 16px;
+}
+
+.category-card p {
+    position: absolute;
+    bottom: 10px;
+    background: white;
+    width: 70%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 2px 2px 10px black;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ürünler Kısmı */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+@media (max-width:1100px) {
+    .products {
+        justify-content: center;
+        gap: 40px;
+    }
+}
+
+.card{
+    max-width: 300px;
+    height: 500px; 
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    /* https://getcssscan.com/css-box-shadow-examples */
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.card img{
+    width: 100%; 
+    height: 340px; 
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+.card h4 {
+    font-size: 16px; 
+    font-weight: 600; 
+    color: #333; 
+    text-align: center; 
+    margin: 5px 0;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    max-width: 100%; 
+}
+
+.card .action{
+    width: 100%;
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background: black;
+    border-radius: 10px;
+    align-items: center;
+    margin-top: auto;
+}
+
+.card .action span{
+    color: greenyellow;
+}
+
+.card .action button{     
+    background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
+    border-radius: 10px;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    font-family: 'poppins';
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.521);
+    cursor: pointer;
+    transition: scale 300ms;
+}
+
+.card .action button:hover{
+    scale: 0.96;
+}
+
+/* Sepet */
+
+.modal-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(128, 128, 128, 0.4) ;
+    display: none;
+    place-items: center;
+}
+
+.active{
+    display: grid;
+}
+
+.modal {
+    background: white;
+    width: 70%;
+    height: 60%;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.modal #icon {
+    display: flex;
+    justify-content: end;
+}
+
+.modal #icon img {
+    width: 40px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.modal #icon img:hover {
+    scale: 0.87;
+}
+
+.modal #list{
+    display: flex;
+    flex-direction: column;
+    /* bütün alanı kaplamasını sağlar */
+    flex-grow: 1;
+    /* elemanlar sınırın dışına çıkarsa scroll ekle */
+    overflow: auto;
+    gap: 30px;
+    padding: 14px;
+}
+
+.modal #list .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.basket-img {
+    width: 60px; 
+    height: 60px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    margin-right: 12px; 
+}
+
+.item {
+    display: flex; 
+    align-items: center; 
+    gap: 16px; 
+    margin-bottom: 12px; 
+    border-bottom: 1px solid #ddd; 
+    padding-bottom: 12px;
+}
+
+.item .title{
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #333; 
+    margin: 8px 0; 
+    text-align: left; 
+    word-wrap: break-word; 
+    max-width: 200px; 
+    line-height: 1.4; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+
+.item .title:hover {
+    color: #007bff;
+    text-decoration: underline; 
+    cursor: pointer; 
+}
+
+.item .price{
+    color: green;
+}
+
+.modal #list .item p{
+    font-size: 14px; 
+    font-weight: 500; 
+    color: #555; 
+    margin: 4px 0; 
+    line-height: 1.6; 
+    text-align: left; 
+    word-wrap: break-word; 
+    max-width: 180px; 
+}
+
+.modal #list .item #delete{
+    width: 30px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.modal #delete:hover{
+    transform: rotate(15deg);
+}
+
+.modal #total{
+    text-align: center;
+}
+
+.modal #total span {
+    color: rgb(0, 203, 0);
+    font-weight: bold;
+}
